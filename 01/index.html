@@ -5,8 +5,8 @@
     <title>Javascript</title>
     <script type="text/javascript">
 
-    function minhafuncao(){
-        alert('Teste 35');
+    function minhafuncao(arg1, arg2){
+        alert(arg1+arg2);
     } 
     </script>
  </head>
@@ -14,6 +14,26 @@
  <body>
 
     <h1>JavaScript</h1>
-    <button onclick="minhafuncao()">Clique </button>
+    <button onclick="minhafuncao(10,20)">Clique </button>
+    <button onclick="escreve('<h1>PROGAMAÇÃO WEB</h1>')">Escreve</button>
+
+    <script type="text/javascript">
+
+      function minhafuncao(arg1, arg2){
+
+         var soma = arg1 + arg2;
+
+         var msg = 'A soma é igual a ';
+
+         alert(msg + soma);
+      }
+
+      function escreve(arg){
+
+         document.write(arg);
+         
+      }
+
+    </script>
  </body>
 </html>
