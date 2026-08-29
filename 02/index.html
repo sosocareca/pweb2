@@ -12,7 +12,7 @@
     }
 
     function escreveDiv2(texto){
-        texto = promp("Digite um texto qualquer");
+        texto = promp('Digite um texto qualquer');
         document.getElementById("minhaDiv2").innerHTML = texto;
     }
 
@@ -20,6 +20,33 @@
 </head>
 
 <body>
+
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Raiz Quadrada</title>
+</head>
+<body>
+
+    <h2>Raiz Quadrada</h2>
+
+    <!-- Botões para disparar a função com cada número -->
+    <button onclick="calcularRaiz(25)">Raiz de 25</button><br><br>
+    <button onclick="calcularRaiz(36)">Raiz de 36</button><br><br>
+    <button onclick="calcularRaiz(49)">Raiz de 49</button>
+
+    <script>
+        // Função que recebe o número e calcula a raiz quadrada
+        function calcularRaiz(numero) {
+            var raiz = Math.sqrt(numero);
+            alert("A raiz quadrada de " + numero + " é " + raiz);
+        }
+    </script>
+
+</body>
+</html>
 
     <h1>Escrevendo na Div</h1>
     <button onclick="escreveDiv('<h1> Programação Web</h1>')">Escrever</button> <br><br>
