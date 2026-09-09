@@ -19,11 +19,11 @@
     function escreverNumerosInput() {
         var input = document.getElementById("numeroInput");
         var n = parseInt(input.value);
-        if (isNaN(n) || n <=0) {
+        if (isNaN(n) || n <= 0) {
             alert("Por favor, insira um número válido maior que zero.");
             return;
         }
-        var div= document.getElementById("numeroInput");
+        var div = document.getElementById("numeroInput");
         div.innerHTML = "";
         for (var i = 1; i <= n; i++) {
             div.innerHTML += i + "<br>";
