@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewsport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+   <script>
+
+    let linguagens = Array();
+
+    linguagens[0] = 'Dart';
+    linguagens[1] = 'PHP';
+    linguagens[2] = 'Java';
+    linguagens[3] = 'Pyton';
+    linguagens[4] = 'Perl';
+    linguagens[5] = 'Ruby on Rails';
+    linguagens[6] = 'C ++';
+
+    function mostrarListaLinguagem(){
+        cost container = document.getElementById('MinhaDiv');
+           for (var i = 0; i < linguagens.length; i ++) {
+                    var tag = '<h5>' + i + ' - ' + linguagens[i] + '</h5>';
+                    container.innerHTML += tag;
+            }
+    }
+
+    function posicaoLinguagens(){
+        var indice = prompt('Qual posição da lista deseja consultar?');
+        alert(linguagens[indice]);
+    }
+
+    let frutas = Array();
+
+       frutas[0] = 'Melancia';
+       frutas[1] = 'Amora';
+       frutas[2] = 'Jaca';
+       frutas[3] = 'Laranja';
+       frutas[4] = 'Pera';
+       frutas[5] = 'Uva';
+       frutas[6] = 'Banana';
+
+       function posicaoFrutas(){ 
+           var indice = prompt('qual posição da lista deseja consultar?');
+           alert(frutas[indice]);
+       }
+   </script> 
+
+   <body>
+
+    <h1>Array de linguagens</h1>
+    <button onclick="mostrarListaLinguagem()">Criar Array</button> <br><br>
+    <button onclick="posicaoFrutas()">posição no array</button>
+    
+
+   </body>
+</head>
+</html>
