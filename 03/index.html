@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewsport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
    <script>
 
@@ -18,7 +18,7 @@
     linguagens[6] = 'C ++';
 
     function mostrarListaLinguagem(){
-        cost container = document.getElementById('MinhaDiv');
+        const container = document.getElementById('minhaDiv');
            for (var i = 0; i < linguagens.length; i ++) {
                     var tag = '<h5>' + i + ' - ' + linguagens[i] + '</h5>';
                     container.innerHTML += tag;
@@ -40,17 +40,35 @@
        frutas[5] = 'Uva';
        frutas[6] = 'Banana';
 
+        function mostrarListaFrutas(){
+        const container = document.getElementById('minhaDiv2');
+           for (var i = 0; i < linguagens.length; i ++) {
+                    var tag = '<h5>' + i + ' - ' + linguagens[i] + '</h5>';
+                    container.innerHTML += tag;
+            }
+    }
+
+
        function posicaoFrutas(){ 
            var indice = prompt('qual posição da lista deseja consultar?');
            alert(frutas[indice]);
        }
+
    </script> 
 
    <body>
 
     <h1>Array de linguagens</h1>
     <button onclick="mostrarListaLinguagem()">Criar Array</button> <br><br>
-    <button onclick="posicaoFrutas()">posição no array</button>
+    <button onclick="posicaoFrutas()">Posição no Array</button>
+    <div id="minhaDiv"></div>
+
+    <br><br>
+
+    <h1>Array de Frutas</h1>
+    <button onclick="mostrarListaFrutas()">Criar Array</button> <br><br>
+    <button onclick="posicaoFrutas()">Posição no Array</button>
+    <div id="minhaDiv2"></div>
     
 
    </body>
