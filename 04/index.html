@@ -8,6 +8,40 @@
         <script>
             let pilhaPessoas = Array();
 
+            function mostrarLista(){
+                const container = document.getElementById('minhaDiv');
+                conatiner.innerHTML = '';
+
+
+                for(var i = 0; i < pilhaPessoas.length; i++) {
+                    var tag = '<h5>' + i + ' - ' + pilhaPessoas[i] + '</h5>';
+                    container.innerHTML += tag;
+                }
+            }
+
+    function adicionar(){
+        var nome = prompt('Qual nome da pessoa?');
+        pilhaPessoas.push(nome);
+        mostrarLista();
+
+    }
+    
+    function posição() {
+        var indice = prompt('Qual posição da lista deseja consultar?');
+        indice = Number(indice);
+        if (indice < 0 || indice >= pilhaPessoas.length){
+            alert('posição invalida');
+            return;
+        }
+        alert('Na posição '+indice+' está: ' +pilhaPessoas[indice] );
+    }
+
+    function remover() {
+        if (pilhaPessoas.length === 0){
+            alert
+        }
+    }
+
             
         </script>
     </head>
