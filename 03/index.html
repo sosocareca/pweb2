@@ -30,7 +30,7 @@
         alert(linguagens[indice]);
     }
 
-    let Frutas = Array();
+    let frutas = Array();
 
        frutas[0] = 'Melancia';
        frutas[1] = 'Amora';
@@ -40,10 +40,10 @@
        frutas[5] = 'Uva';
        frutas[6] = 'Banana';
 
-        function mostrarListaFruta(){
+        function mostrarListaFrutas(){
         const container = document.getElementById('minhaDiv2');
-           for (var i = 0; i < Fruta.length; i ++) {
-                    var tag = '<h5>' + i + ' - ' + Frutas[i] + '</h5>';
+           for (var i = 0; i < Frutas.length; i ++) {
+                    var tag = '<h5>' + i + ' - ' + frutas[i] + '</h5>';
                     container.innerHTML += tag;
             }
     }
