@@ -51,11 +51,30 @@
         mostrarLista();
     }
 
-    
+    function inverterPilha(){
+        pilhaPessoas.reverse();
+        mostrarLista();
+    }
+
 
 
 
             
         </script>
+
+
+<body>
+
+    <h1>Lista de Pessoas</h1>
+
+    <button onclick="adicionar()">Adicionar Pessoas</button> <br><br>
+    <button onclick="posição()">Posição</button>
+    <button onclick="remover()">Remover</button>
+    <button onclick="limparLista()">Limpar</button>
+    <button onclick="inverterPilha()">Inverter Pilha</button>
+    <div id="minhaDiv"></div>
+
+    
+</body>
     </head>
 </html>
