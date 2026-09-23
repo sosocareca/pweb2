@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Livros</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .form-container, .controls-container {
+      margin-bottom: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="number"] {
+      padding: 4px 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      padding: 4px 10px;
+      border: 1px solid #888;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e0e0e0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Livros</h1>
+
+  <div class="form-container">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" placeholder="Digite o título do livro">
+
+    <label for="autor">Autor:</label>
+    <input type="text" id="autor" placeholder="Digite o nome do autor">
+
+    <label for="ano">Ano:</label>
+    <input type="number" id="ano" placeholder="Digite o ano de publicação">
+
+    <button onclick="adicionarLivro()">Adicionar</button>
+  </div>
+
+  <div class="controls-container">
+    <button onclick="ordenarPorPosicao()">Posição</button>
+    <button onclick="removerUltimo()">Remover Último</button>
+    <button onclick="limparLista()">Limpar Lista</button>
+    <button onclick="inverterLista()">Inverter</button>
+  </div>
+
+  <hr>
+
+  <table>
+    <tbody id="listaLivros">
+    </tbody>
+  </table>
+
+  <script>
+    let livros = [];
+
+    function atualizarTabela() {
+      const tbody = document.getElementById('listaLivros');
+      tbody.innerHTML = '';
+
+      livros.forEach((livro, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${index}</td> <!-- Começa no índice 0 -->
+          <td>${livro.titulo}</td>
+          <td>${livro.autor}</td>
+          <td>${livro.ano}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function adicionarLivro() {
+      const tituloInput = document.getElementById('titulo');
+      const autorInput = document.getElementById('autor');
+      const anoInput = document.getElementById('ano');
+
+      const titulo = tituloInput.value.trim();
+      const autor = autorInput.value.trim();
+      const ano = anoInput.value.trim();
+
+      if (!titulo || !autor || !ano) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+      }
+
+      livros.push({ titulo, autor, ano });
+      tituloInput.value = '';
+      autorInput.value = '';
+      anoInput.value = '';
+
+      atualizarTabela();
+    }
+
+    function removerUltimo() {
+      if (livros.length > 0) {
+        livros.pop();
+        atualizarTabela();
+      } else {
+        alert('A lista já está vazia!');
+      }
+    }
+
+    function limparLista() {
+      livros = [];
+      atualizarTabela();
+    }
+
+    function inverterLista() {
+      livros.reverse();
+      atualizarTabela();
+    }
+
+    function ordenarPorPosicao() {
+      atualizarTabela();
+    }
+  </script>
+
+</body>
+</html>
